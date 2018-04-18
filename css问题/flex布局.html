@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .content {
+            display: flex;
+            flex-direction: row; /*弹性布局主轴的方向*/
+            flex-wrap: wrap;  /*超出换行*/
+            justify-content: center;   /*项目在主轴上的对齐方式:居中对齐方式*/
+        }
+        .span-content {
+           /* width: 300px;*/
+            height: 100px;
+            border: 1px solid #ddd;
+            /*项目在交叉轴上如何对齐*/
+            display: flex;
+            align-items: center;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!--任何一个容器都可以指定为Flex布局，包括块级元素与行内元素，-->
+        <span class="span-content">111</span>
+        <span class="span-content">222</span>
+        <span class="span-content">333</span>
+        <span class="span-content">444</span>
+        <span class="span-content">555</span>
+        <span class="span-content">666</span>
+        <span class="span-content">777</span>
+    </div>
+    <script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+</script>
+</body>
+</html>

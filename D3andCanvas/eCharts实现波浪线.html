@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .polyLine-animate {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+        .polyLine-animate div {
+            position: relative;
+            background: #373d41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="chartLine" class="polyLine-animate"></div>
+    </div>
+<!--<script src="../js/jquery-1.11.3.js"></script>-->
+<script src="../js/echarts.min.js"></script>
+<script>
+    function drawLIne(){
+        var tempdata = [];
+        var myChart = echarts.init(document.getElementById("chartLine"));
+        function randomData(){
+            now = new Date(+now + oneDay);
+            value = value +Math.random()*21-10;
+            return {
+                name: now.toString(),
+                value: [
+                    [now.getFullYear(), now.getMonth()+1,now.getDate()].join('/'),
+                    Math.round(value)
+                ]
+            }
+        }
+        var now = + new Date(1997,9,3);
+        var oneDay = 24 * 3600 * 1000;
+        var value = Math.random()*500;
+        for(var i=0;i<500;i++){
+            tempdata.push(randomData())
+        }
+        let option = {
+            color: ["#adcae9"],
+            grid: {
+                left: 0,
+                top:0,
+                bottom: 0,
+                right: 0
+            },
+            xAxis: {
+                show: false,
+                type: 'time',
+                boundaryGap: false
+            },
+            yAxis: {
+                show: false,
+                type: 'value',
+                boundaryGap: false
+            },
+            series: [{
+                type: 'line',
+                showSymbol: false,
+                hoverAnimation: false,
+                data: tempdata
+            }]
+        };
+        setInterval(function(){
+            for(var i=0;i<5;i++){
+                tempdata.shift();
+                tempdata.push(randomData())
+            }
+            myChart.setOption(option)
+        },500)
+    }
+    drawLIne();
+</script>
+</body>
+</html>

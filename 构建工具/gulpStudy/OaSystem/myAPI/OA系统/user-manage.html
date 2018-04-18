@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/organ.css"/>
+    <link rel="stylesheet" href="css/user-manage.css"/>
+</head>
+<body>
+<div id="base">
+    <div class="base-left" id="depart">
+        <div class="second-level-menu">
+            <a href="#" class="sort-tilte firm-title" data-menu="menu-sub">浙江核新同花顺有限公司
+                <i class="down-icon"></i>
+            </a>
+            <ul class="menu-sub menu-sub-show">
+                <li>
+                    <div class="second-level-menu">
+                        <a href="#" class="sort-tilte">总经理办公室
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="second-level-menu">
+                        <a href="#" class="sort-tilte">人力资源部
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="second-level-menu">
+                        <a href="#" class="sort-tilte">财务部
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="research">
+                        <div class="second-level-menu">
+                            <a href="#" class="sort-tilte" data-menu="menu-sub">研发部
+                                <i class="down-icon"></i>
+                            </a>
+                            <ul class="menu-sub menu-sub-show">
+                                <li>
+                                    <div class="second-level-menu">
+                                        <a href="#" class="sort-tilte iFind-title" data-menu="menu-sub">iFinD事业部
+                                            <i class="down-icon"></i>
+                                        </a>
+                                        <ul class="menu-sub menu-sub-show">
+                                            <li>
+                                                <div class="second-level-menu">
+                                                    <a href="#" class="sort-tilte iFind-project" data-menu="menu-sub">OA项目组
+                                                        <i class="down-icon"></i>
+                                                    </a>
+                                                    <ul class="menu-sub menu-sub-show">
+                                                        <li><a href="#">开发组</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="second-level-menu">
+                                                    <a href="#" class="sort-tilte iFind-project" data-menu="menu-sub">小贷项目组
+                                                        <i class="down-icon"></i>
+                                                    </a>
+                                                    <ul class="menu-sub menu-sub-show">
+                                                        <li><a href="#">开发组</a></li>
+                                                        <li><a href="#">测试组</a></li>
+                                                        <li><a href="#">服务端</a></li>
+                                                        <li><a href="#">客户端</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="base-right">
+        <div class="info">
+            <div class="operate">
+                <button class="btn btn-active" data-target="search-Modal" id="search">查看用户</button>
+                <button class="btn btn-primary" data-target="add-Modal" id="add">添加用户</button>
+                <button class="btn btn-primary"  id="update">修改用户</button>
+                <button class="btn btn-primary" id="delete">删除用户</button>
+                <button class="btn btn-primary" data-target="tutor-Modal" id="tutor">导师配置</button>
+                <!--  todo 排序-->
+                <button class="btn btn-primary" data-target="visor-Modal" id="visor">主管配置</button>
+            </div>
+            <!-- todo 表格信息-->
+            <table class="table specific-info">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" class="check-icon" id="check-all"/>全选
+                        <i class="line-icon"></i>
+                    </th>
+                    <th>序号 <i class="line-icon"></i></th>
+                    <th>姓名 <i class="line-icon"></i></th>
+                    <th class="th-role">组织机构与角色 <i class="line-icon"></i></th>
+                    <th>主管 <i class="line-icon"></i></th>
+                    <th>导师 <i class="line-icon"></i></th>
+                    <th>晋级时间 <i class="line-icon"></i></th>
+                    <th>入职时间 <i class="line-icon"></i></th>
+                    <th>email <i class="line-icon"></i></th>
+                    <th>状态 <i class="line-icon"></i></th>
+                    <th>创建人</th>
+                </tr>
+                </thead>
+                <tbody id="user-list">
+                <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!--  查看用户弹出框-->
+<div class="modal" id="search-Modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>查看用户</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- todo 表单部分-->
+                <div class="user-info">
+                    <div class="form-inline">
+                        <label class="form-info">姓名:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">性别:</label>
+                        <select class="form-select select-sex">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">年龄:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">电话:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">邮箱:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">QQ:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">微信:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">飞信:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">支付宝:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>序号 <i class="line-icon"></i></th>
+                            <th>组织机构名称 <i class="line-icon"></i></th>
+                            <th>角色名称</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>组织机构管理</td>
+                            <td>管理者</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>角色用户管理</td>
+                            <td>管理者</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="form-inline">
+                        <label class="form-info">导师:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">主管:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">用户状态:</label>
+                        <select class="form-select select-state">
+                            <option value="0">在职</option>
+                            <option value="1">试用</option>
+                            <option value="2">见习</option>
+                            <option value="3">离职</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">是否可用:</label>
+                        <select class="form-select select-isable">
+                            <option value="0">是</option>
+                            <option value="1">否</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">晋级时间:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">入职时间:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">最近登录时间:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">最近登录IP:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">创建人:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">创建时间:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">最近修改人:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">最近修改时间:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todo 添加用户弹出框-->
+<div class="modal" id="add-Modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>添加用户</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="user-info" action="">
+                    <!-- todo 表单部分-->
+                    <div class="form-inline">
+                        <label class="form-info">姓名:</label>
+                        <input type="text" class="form-primary" name="username"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">性别:</label>
+                        <select class="form-select select-sex">
+                            <option value="0" name="sex">男</option>
+                            <option value="1" name="sex">女</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">年龄:</label>
+                        <input type="text" class="form-primary" name="age"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">电话:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">邮箱:</label>
+                        <input type="text" class="form-primary" name="mail"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">QQ:</label>
+                        <input type="text" class="form-primary" name="qq"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">微信:</label>
+                        <input type="text" class="form-primary" name="wechat"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">飞信:</label>
+                        <input type="text" class="form-primary" name="fetion"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">支付宝:</label>
+                        <input type="text" class="form-primary" name="alipay"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">导师:</label>
+                        <input type="text" class="form-primary tutor-input" name="tutor"/>
+                        <button type="button" class="btn btn-active btn-configure" data-target="tutor-Modal">配置导师
+                        </button>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">主管:</label>
+                        <input type="text" class="form-primary visor-input" name="visor"/>
+                        <button type="button" class="btn btn-active btn-configure" data-target="visor-Modal">配置主管
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>序号 <i class="line-icon"></i></th>
+                            <th>组织机构名称 <i class="line-icon"></i></th>
+                            <th>角色名称</th>
+                        </tr>
+                        </thead>
+                        <tbody id="institue-list">
+                        <!--<tr>
+                            <td>1</td>
+                            <td>组织机构管理</td>
+                            <td>管理者</td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                    <div class="form-inline">
+                        <label class="form-info">用户状态:</label>
+                        <select class="form-select select-state" id="userState" name="userState">
+                            <option value="0">在职</option>
+                            <option value="1">试用</option>
+                            <option value="2">见习</option>
+                            <option value="3">离职</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">是否可用:</label>
+                        <select class="form-select select-isable" name="isAbled">
+                            <option value="0">是</option>
+                            <option value="1">否</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="operate">
+                    <button class="btn btn-active" data-target="add-organ" id="addOrgan">添加组织机构和角色</button>
+                    <button type="button" class="btn btn-primary" id="add-submit">保存</button>
+                    <button class="btn btn-primary close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todo 修改组织机构-->
+<div class="modal" id="update-Modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>修改用户</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="user-info">
+                    <!-- todo 表单部分-->
+                    <div class="form-inline">
+                        <label class="form-info">姓名:</label>
+                        <input type="text" class="form-primary" name="update-name"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">性别:</label>
+                        <select class="form-select select-sex" name="update-sex">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">年龄:</label>
+                        <input type="text" class="form-primary" name="update-age"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">电话:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">邮箱:</label>
+                        <input type="text" class="form-primary" name="update-mail"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">QQ:</label>
+                        <input type="text" class="form-primary"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">微信:</label>
+                        <input type="text" class="form-primary" name="update-wechat"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">飞信:</label>
+                        <input type="text" class="form-primary" name="update-fetion"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">支付宝:</label>
+                        <input type="text" class="form-primary" name="update-aliply"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">导师:</label>
+                        <input type="text" class="form-primary tutor-input" name="update-tutor"/>
+                        <button class="btn btn-active btn-configure" data-target="tutor-Modal" >配置导师</button>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">主管:</label>
+                        <input type="text" class="form-primary visor-input" name="update-visor"/>
+                        <button class="btn btn-active btn-configure" data-target="visor-Modal" >配置主管</button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>序号 <i class="line-icon"></i></th>
+                            <th>组织机构名称 <i class="line-icon"></i></th>
+                            <th>角色名称</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>组织机构管理</td>
+                            <td>管理者</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>角色用户管理</td>
+                            <td>管理者</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="form-inline">
+                        <label class="form-info">用户状态:</label>
+                        <select class="form-select select-state" id="updateState" name="update-state">
+                            <option value="0">在职</option>
+                            <option value="1">试用</option>
+                            <option value="2">见习</option>
+                            <option value="3">离职</option>
+                        </select>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">是否可用:</label>
+                        <select class="form-select select-isable" name="update-isAbled">
+                            <option value="0">是</option>
+                            <option value="1">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="operate">
+                    <button class="btn btn-active" data-target="add-organ">添加组织机构和角色</button>
+                    <button type="button" class="btn btn-primary" id="update-submit">保存</button>
+                    <button type="button" class="btn btn-primary close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todo 添加组织机构-->
+<div class="modal" id="add-organ">
+    <div class="modal-dialog sm-modal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>添加组织机构和角色</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="user-info" id="add-institue">
+                    <div class="form-inline">
+                        <label class="form-info">组织机构:</label>
+                        <input type="text" class="form-primary" name="institueName"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">角色:</label>
+                        <input type="text" class="form-primary" name="institueRole"/>
+                    </div>
+                    <div class="form-inline">
+                        <label class="form-info">管理范围：</label>
+                        <textarea class="form-textarea" id="form-textarea" name="institueRange"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-active" data-target="tutor2-Modal" id="admin">管理范围配置</button>
+                <button type="button" class="btn btn-active" id="institue-submit">确定</button>
+                <button type="button" class="btn btn-primary close">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- todo 导师配置-->
+<div class="modal" id="tutor-Modal">
+    <div class="modal-dialog sm-modal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>导师/主管分配</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body item-list">
+                <div class="second-level-menu">
+                    <a href="#" class="sort-tilte" data-menu="menu-sub">
+                        <span class="title-name">Item1.1</span>
+                        <i class="down-icon"></i>
+                    </a>
+                    <ul class="menu-sub menu-sub-show ">
+                        <li><a href="#">Item 1.1</a></li>
+                        <li><a href="#">Item 1.2</a></li>
+                        <li><a href="#">Item 1.3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-active" id="tutor-submit">保存</button>
+                <button type="button" class="btn btn-primary close">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todo 管理配置范围-->
+<div class="modal" id="tutor2-Modal">
+    <div class="modal-dialog sm-modal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>导师/主管分配</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body item-list">
+                <div class="second-level-menu">
+                    <a href="#" class="sort-tilte" data-menu="menu-sub">
+                        <span class="title-name">Item1.1</span>
+                        <i class="down-icon"></i>
+                    </a>
+                    <ul class="menu-sub menu-sub-show ">
+                        <li><a href="#">Item 1.1</a></li>
+                        <li><a href="#">Item 1.2</a></li>
+                        <li><a href="#">Item 1.3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-active" id="tutor2-submit">保存</button>
+                <button type="button" class="btn btn-primary close">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todo 主管配置-->
+<div class="modal" id="visor-Modal">
+    <div class="modal-dialog sm-modal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <h3>导师/主管分配</h3>
+                <span class="close-icon close">&times;</span>
+            </div>
+            <div class="modal-body item-list">
+                <div class="second-level-menu">
+                    <a href="#" class="sort-tilte" data-menu="menu-sub">
+                        <span class="title-name">Item1 1.1</span>
+                        <i class="down-icon"></i>
+                    </a>
+                    <ul class="menu-sub menu-sub-show ">
+                        <li><a href="#">Item1 1.1</a></li>
+                        <li><a href="#">Item1 1.2</a></li>
+                        <li><a href="#">Item1 1.3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-active" id="visor-submit">保存</button>
+                <button type="button" class="btn btn-primary close">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/base.js"></script>
+<script>
+    // todo 添加用户
+    $('#add-submit').click(function () {
+        if (!$('input[name="username"]').val()) {
+            errPop("用户名不能为空！", 'input[name="username"]');
+        }else {
+            var cont = $('.user-info').serialize();  // todo 表单序列化操作
+            var contArr = cont.split("&");
+            for (var i = 0, Arr2 = []; i < contArr.length; i++) {
+                Arr2[i] = contArr[i].split("=");
+            }
+            for (var j = 0, obj = {}; j < Arr2.length; j++) {
+                obj[Arr2[j][0]] = Arr2[j][1];
+            }
+            $('#user-list').append(`
+                 <tr>
+                    <td>
+                        <input type="checkbox" class="check-icon"/>
+                    </td>
+                    <td>${$('#user-list tr').length + 1}</td>
+                    <td>${obj.username}</td>
+                    <td>${$('input[name="institueName"]').val()}</td>
+                    <td>${obj.tutor}</td>
+                    <td>${obj.visor}</td>
+                    <td>2016-06-02</td>
+                    <td>2016-06-02</td>
+                    <td>${obj.mail}</td>
+                    <td>${$('#userState option:selected').text()}</td>
+                    <td>金浩</td>
+                </tr>
+            `);
+            $(this).parents('.modal').eq(0).removeClass('show');
+        }
+
+    });
+
+    //todo 导师配置及主管配置
+    $('.menu-sub').on('click', 'li a', function (e) {
+        e.preventDefault();
+        var title = $(this).parent().parent().prev().children('.title-name');
+        $(title).html($(this).html());
+        $(this).parent().parent().removeClass('menu-sub-show');
+
+    })
+    //提交保存数据时的操作
+    function submit(param1, param2) {
+        var title_name = $(param2).parent().prev().children('.second-level-menu').eq(0)
+                .children('.sort-tilte').children('.title-name').html();
+        $(param1).val(title_name);
+        $(param2).parents('.modal').eq(0).removeClass('show');
+    }
+    $('#tutor-submit').click(function () {
+        submit('.tutor-input', this);
+    })
+    $('#visor-submit').click(function () {
+        submit('.visor-input', this);
+    })
+    //导师主管分配
+    $('#tutor2-submit').click(function () {
+        var title_name = $(this).parent().prev().children('.second-level-menu').eq(0)
+                .children('.sort-tilte').children('.title-name').html();
+        $('#form-textarea').html(title_name);
+        $(this).parents('.modal').eq(0).removeClass('show');
+    })
+    $('#institue-submit').click(function () {
+        var institueVal=$('#tutor2-Modal .title-name').val();
+        console.log(institueVal);
+        $('#institue-list').append(`
+             <tr>
+                            <td>${$('#institue-list tr').length + 1}</td>
+                            <td>${$('input[name="institueName"]').val()}</td>
+                            <td>${$('input[name="institueRole"]').val()}</td>
+                        </tr>`);
+        $(this).parents('.modal').eq(0).removeClass('show');
+    });
+    /* todo 全选操作 */
+    $('#check-all').click(function () {
+        allSel(this,'#user-list :checkbox');
+    })
+    // todo 子复选框判断全选事件
+    $("#user-list").on('click',':checkbox',function(){
+        allchk('#user-list :checkbox','#check-all');
+    });
+    $('#update').click(function(){
+
+        var chknum = $("#user-list :checkbox").size();
+        var unchk=0;
+        $("#user-list :checkbox").each(function () {
+            if($(this).prop("checked")==false){
+                unchk++;
+            }
+        });
+        if(chknum==unchk){
+            alert("请选择您要修改的选项！");
+            return  false;
+        }
+        $('#update-Modal').addClass('show');
+
+    })
+    // todo 清除弹出框
+    $('#update-Modal .close').click(function(){
+        $('#update-Modal').removeClass('show');
+    })
+
+    $('#update-submit').click(function () {
+        var target=$('#user-list').find('.check-icon:checked').parent().parent();//tr;
+        $(target).children().eq(2).html($('input[name="update-name"]').val());
+        $(target).children().eq(4).html($('input[name="update-visor"]').val());
+        $(target).children().eq(5).html($('input[name="update-tutor"]').val());
+        $(target).children().eq(9).html($('#updateState option:selected').text());
+
+        $('#update-Modal').removeClass('show');
+    })
+
+    //删除操作
+    // todo 删除用户角色
+    $('#delete').click(function () {
+        $('#user-list').find('.check-icon:checked').parent().parent().remove();
+
+    })
+
+
+</script>
+</body>
+</html>

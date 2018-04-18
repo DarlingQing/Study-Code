@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选中右键加标签</title>
+    <style>
+        body{
+            position:relative;
+        }
+        .container {
+            width: 500px;
+            margin: auto;
+        }
+        #text {
+            width: 500px;
+            height: 250px;
+            resize: none;
+            padding: 5px;
+            line-height: 25px;
+            font-size: 14px;
+        }
+        #rightmenu{
+            position:absolute;
+            width: 100px;
+            font-size: 12px;
+            display: none;
+            border:1px solid;
+            border-radius: 4px;
+            z-index: 100;
+        }
+        #infoMessag{
+            position: absolute;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            display: none;
+            border: 1px solid;
+            background: #fff;
+            z-index: 100;
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+        #rightmenu li{
+            cursor: pointer;
+            height: 30px;
+            line-height: 30px;
+            background-color: white;
+            padding-left: 5px;
+        }
+        #rightmenu li:hover{
+            background-color: silver;
+        }
+        ul,li{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea name="" id="text" cols="80" rows="10">
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+                能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间 能不能给我一首歌的时间  能不能给我一首歌的时间
+        </textarea>
+    </div>
+    <div id = 'rightmenu' tabindex = "-1">
+        <ul id='clicklist'>
+            <li class = "click-list">添加p标签</li>
+            <li class = "click-list">添加div标签</li>
+            <li class = "click-list">添加span标签</li>
+        </ul>
+    </div>
+    <div id = "infoMessag">
+        <span>请选择需要插入标签的内容区域</span>
+    </div>
+</body>
+<script>
+    //textarea右键编辑功能
+    document.oncontextmenu = function(e){
+        return false;
+    }
+    text.addEventListener('contextmenu',function(e){
+        var from = text.selectionStart;
+        var to = text.selectionEnd;
+        if(from<to){
+            rightmenu.style.display = 'block';
+            rightmenu.style.left = e.pageX+'px';
+            rightmenu.style.top = e.pageY+'px';
+            rightmenu.focus();
+            e.preventDefault()
+        }else if(from == to){
+            infoMessag.style.display = 'block';
+            infoMessag.style.left = e.pageX + 'px';
+            infoMessag.style.top = e.pageY + 'px';
+            infoMessag.focus();
+            e.preventDefault();
+            setTimeout(function () {
+                infoMessag.style.display = 'none';
+            },1000);
+        }
+    })
+    clicklist.addEventListener('click',function(e){
+        var lists = clicklist.querySelectorAll('li');
+        switch(e.target){
+            case lists[0]:
+                insert('p');
+                break;
+            case lists[1]:
+                insert('div');
+                break;
+            case lists[2]:
+                insert('span');
+                break;
+            default:
+                break;
+        }
+        rightmenu.style.display = 'none'
+    })
+
+    rightmenu.addEventListener('blur',function(){
+        rightmenu.style.display='none';
+    });
+    function insert(tag){
+        var val = text.value,len = tag.length;
+        var from = text.selectionStart,to = text.selectionEnd;
+        var before = val.slice(0,from),after = val.slice(to),selected = val.slice(from,to);
+        inserted = `<${tag}>${selected}</${tag}>`;
+        text.value = before + inserted + after;
+        text.select();
+        text.selectionEnd = to + 5 + len * 2
+        text.selectionStart = from
+    }
+</script>
+<html>

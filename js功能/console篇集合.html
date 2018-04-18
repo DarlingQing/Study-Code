@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+
+<script>
+
+    //分类输出
+    console.info("info");
+    console.warn("warning");
+    console.error("error");
+    //分组输出
+    console.group("First grouop");
+    console.log("1-1");
+    console.log("1-2");
+    //表格输出
+    const a = 5,b = 6,c = 7;
+    console.table({a,b,c,m:{ name: 'aaa',age: 27}})
+    //查看对象
+    var person = {
+        name: "HQ",
+        age: 22
+    }
+    console.dir(person);
+    //查看节点
+    console.dirxml(person);
+    //条件输出
+    console.assert(true,"you can")
+    //追踪调用堆栈
+    function add(a,b) {
+
+    }
+    //    计时功能
+    console.time("time");
+    for(var i=0;i<100;i++){
+        i++;
+    }
+    console.timeEnd("time")
+
+    var arr = ["aaa","bbb"];
+    console.log("%s and %s two numbers",arr[0],arr[1])
+
+</script>
+</body>
+</html>

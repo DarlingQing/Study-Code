@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        /*nth-child VS nth-of-type*/
+        .p-content .p-line:nth-of-type(1) {
+            background:#ff0000;
+        }
+        .p-content .p-line:nth-child(2n-1) {
+            background: #3d50f5;
+        }
+        /* 坑点：带class选中问题*/
+        .test-box .test:nth-of-type(1) {
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="test-box">
+    <h1>123</h1>
+    <p>123</p>
+    <h1 class="test">123</h1>
+    <h1 class="test">123</h1>
+</div>
+
+<h1>这是标题</h1>
+<div class="p-content">
+    <span>span部分</span>
+    <p class="p-line">第一个段落 。</p>
+    <p class="p-line">第二个段落。</p>
+    <p class="p-line">第三个段落。</p>
+    <p class="p-line">第四个段落。</p>
+    <p class="p-line">第五个段落。</p>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+</script>
+</body>
+</html>

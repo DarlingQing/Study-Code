@@ -1,0 +1,63 @@
+/* todo 头部*/
+#header {
+    height: 48px;
+}
+.topnav {
+    position: fixed;
+    background-color: #2F3847;
+    z-index: 110;
+    width: 100%;
+}
+.top-panel{
+    height: 48px;
+}
+.top-panel h1 {
+    font-size: 18px;
+    line-height: 48px;
+    float: left;
+    height: 48px;
+    color: #f2f3f4;
+    padding-left: 50px;
+}
+.top-menu {
+    float: left;
+    margin-left: 15px;
+}
+.top-menu li{
+    display: inline-block;
+    position: relative;
+}
+.top-menu li a{
+    line-height: 48px;
+    padding: 0 20px;
+    color: #fff;
+}
+/* todo 主体部分 */
+ #outContainer{
+    overflow:hidden;
+}
+#left-panel {
+    width: 199px;
+     position: fixed;
+    height: 100%;
+}
+.slidebar-title {
+    font-size: 24px;
+    position: relative;
+    padding:12px 0 12px 10px ;
+    border-bottom: 1px solid #cadbe6;
+}
+/* todo */
+
+.siteMap-list {
+    margin-top: 15px;
+}
+.siteMap-list .second-level-menu a {
+    padding-right: 39px;
+}
+#right-panel {
+    /* width: 100%; */
+    /* float: left; */
+    margin-left: 201px;
+    height: 1000px;
+}

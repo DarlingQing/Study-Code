@@ -1,0 +1,56 @@
+<template lang="pug">
+  .header
+    .left
+      img.logo(:src="languageData.logo", alt="logo",@click="backhome")
+      span {{languageData.signUp}}
+    .right(v-if="rightShow")
+      l-selector
+</template>
+
+<script>
+import lSelector from './selector.vue'
+import Vuex from "vuex";
+
+export default {
+  components: {
+    lSelector
+  },
+  data() {
+    return {
+      rightShow: true
+    }
+  },
+  computed: {
+    ...Vuex.mapGetters(["languageData"]),
+  },
+  methods: {
+    backhome(){
+      location.href = "/"
+    }
+  }
+}
+</script>
+
+<style scoped lang="less">
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+
+  .left, .right {
+    height: 100%;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      margin-right: 20px;
+      height: 20px;
+    }
+  }
+}
+</style>

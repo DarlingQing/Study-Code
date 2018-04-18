@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .tran-top {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #f06060;
+            transform: rotate(135deg);
+        }
+        .tran2 {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid red;
+        }
+        .tran3 {
+            width: 0;
+            height: 0;
+            border-top: 100px solid red;
+            border-bottom: 100px solid transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="tran-top"></div>
+    <div class="tran2"></div>
+    <div class="tran3"></div>
+</div>
+    <script src="../js/jquery-1.11.3.js"></script>
+<script>
+    var obj= {};
+    var descriptor = Object.create(null);
+    descriptor.value = 'static';
+    descriptor.name = 'descr';
+    Object.defineProperty(obj,'key',descriptor);
+
+    //显示
+    Object.defineProperty(obj,'key',{
+        enumerable: false,
+        configurable: false,
+        writeable: false,
+        value: 'static'
+    })
+    console.dir(obj,descriptor)
+
+    var str = "hello world";
+    var result = /^hello/.test(str)
+
+    console.log(result)
+
+    var names = 'Hurry Trump;Fred Bannery; Helen; Anner';
+    var res = /\s*;\s*/;
+    var nameLists = names.split(res);
+    console.log(nameLists)
+</script>
+</body>
+</html>

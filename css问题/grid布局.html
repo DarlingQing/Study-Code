@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .item-a {
+            grid-area: header;
+            background: #f0f0f0;
+			
+        }
+        .item-b {
+            grid-area: sidebar;
+            background: #6fa6f0;
+        }
+        .item-c {
+            grid-area: main;
+            background: #f04271;
+        }
+        .item-d {
+            grid-area: footer;
+            background: #2619f0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 20% 30% 40% auto;
+            grid-template-rows: 100px 80% auto;
+            grid-template-areas: "header header header header" "sidebar . main mian" "footer footer footer footer";
+            grid-column-gap: 10px;
+            grid-row-gap: 15px;
+            /*border: 1px solid #ddd;*/
+            align-content: start;
+            grid-auto-flow: row;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <section class="container">
+        <div class="item-a">item-a</div>
+        <div class="item-b">item-b</div>
+        <div class="item-c">item-c</div>
+        <div class="item-d">item-d</div>
+        <div class="item-e">item-e</div>
+    </section>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+</script>
+</body>
+</html>

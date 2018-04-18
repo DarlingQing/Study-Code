@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>角色管理</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/organ.css"/>
+    <link rel="stylesheet" href="css/role-manage.css"/>
+</head>
+<body>
+    <div id="base">
+        <div class="operate">
+            <button class="btn btn-active" data-target="check-Modal" id="check" >查看</button>
+            <button class="btn btn-primary" data-target="add-Modal" id="add" >添加</button>
+            <button class="btn btn-primary" data-target="update-Modal" id="update" >修改</button>
+            <button class="btn btn-primary" id="delete-user">删除</button>
+            <button class="btn btn-primary" data-target="distruct-Modal" id="distruct" >分配权限</button>
+        </div>
+        <!--  todo 表格列表 -->
+        <table class="table specific-info">
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" class="check-icon" id="check-all"/>全选
+                    <i class="line-icon"></i>
+                </th>
+                <th>序号 <i class="line-icon"></i></th>
+                <th>角色名称 <i class="line-icon"></i></th>
+                <th>描述 <i class="line-icon"></i></th>
+                <th>创建人 <i class="line-icon"></i></th>
+                <th>是否可用</th>
+            </tr>
+            </thead>
+            <tbody id="user-list">
+            <tr>
+                <td>
+                    <input type="checkbox" class="check-icon"/>
+                </td>
+                <td>1</td>
+                <td>总监</td>
+                <td></td>
+                <td>管理员</td>
+                <td>可用</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox"  class="check-icon"/>
+                </td>
+                <td>2</td>
+                <td>架构师</td>
+                <td></td>
+                <td>管理员</td>
+                <td>可用</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox"  class="check-icon"/>
+                </td>
+                <td>3</td>
+                <td>产品经理</td>
+                <td></td>
+                <td>管理员</td>
+                <td>可用</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox"  class="check-icon"/>
+                </td>
+                <td>4</td>
+                <td>开发工程师</td>
+                <td></td>
+                <td>管理员</td>
+                <td>可用</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox"  class="check-icon"/>
+                </td>
+                <td>5</td>
+                <td>主管</td>
+                <td></td>
+                <td>管理员</td>
+                <td>可用</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!--  todo 查看角色弹出框-->
+    <div class="modal" id="check-Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <h3>查看角色</h3>
+                    <span class="close-icon close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="form-default">
+                        <div class="form-group">
+                            <label class="form-info">角色名称：</label>
+                            <input type="text" class="form-primary"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">描述：</label>
+                            <input type="text" class="form-primary" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">创建人：</label>
+                            <input type="text" class="form-primary" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">创建时间：</label>
+                            <input type="text" class="form-primary" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">最近修改人：</label>
+                            <input type="text" class="form-primary" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">最近修改时间：</label>
+                            <input type="text" class="form-primary" />
+                        </div>
+                        <div class="form-group authority-group">
+                            <label class="form-info label-authority">拥有权限：</label>
+                            <div class="second-level-menu authority">
+                                <a href="#" class="sort-tilte" data-menu="menu-sub">系统管理
+                                    <i class="down-icon"></i>
+                                </a>
+                                <ul class="menu-sub menu-sub-show">
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title" data-menu="menu-sub">组织机构管理
+                                                <i class="down-icon"></i>
+                                            </a>
+                                            <ul class="menu-sub menu-sub-show oragn-manage">
+                                                <li><a href="#">新增组织机构</a></li>
+                                                <li><a href="#">修改组织机构</a></li>
+                                                <li><a href="#">解散组织机构</a></li>
+                                                <li><a href="#">排序</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">用户管理</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">权限管理</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  todo 添加角色弹出框-->
+    <div class="modal" id="add-Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <h3>添加角色</h3>
+                    <span class="close-icon close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="form-default">
+                        <div class="form-group">
+                            <label class="form-info">角色名称：</label>
+                            <input type="text" class="form-primary" id="roleTitle" name="roleName"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">描述：</label>
+                            <input type="text" class="form-primary"  id="roleText" name="roleText"/>
+                        </div>
+                        <div class="form-group authority-group own-authority">
+                            <label class="form-info label-authority">拥有权限：</label>
+                            <div class="second-level-menu authority">
+                                <a href="#" class="sort-tilte" data-menu="menu-sub">
+                                    <span class="title-name">系统管理</span>
+                                    <i class="down-icon"></i>
+                                </a>
+                                <ul class="menu-sub menu-sub-show">
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title" data-menu="menu-sub">组织机构管理
+                                                <i class="down-icon"></i>
+                                            </a>
+                                            <ul class="menu-sub menu-sub-show oragn-manage">
+                                                <li><a href="#">新增组织机构</a></li>
+                                                <li><a href="#">修改组织机构</a></li>
+                                                <li><a href="#">解散组织机构</a></li>
+                                                <li><a href="#">排序</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">用户管理</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">权限管理</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="role-operate modal-footer">
+                            <button class="btn btn-active" data-target="distruct-Modal">分配权限</button>
+                            <button class="btn btn-primary" id="add-submit">保存</button>
+                            <button class="btn btn-primary close">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  todo 修改角色弹出框-->
+    <div class="modal" id="update-Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <h3>修改角色</h3>
+                    <span class="close-icon close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="form-default">
+                        <div class="form-group">
+                            <label class="form-info">角色名称：</label>
+                            <input type="text" class="form-primary" id="role-name"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">描述：</label>
+                            <input type="text" class="form-primary" id="role-desc" />
+                        </div>
+                        <div class="form-group authority-group">
+                            <label class="form-info label-authority" id="">拥有权限：</label>
+                            <div class="second-level-menu authority">
+                                <a href="#" class="sort-tilte" data-menu="menu-sub">系统管理
+                                    <i class="down-icon"></i>
+                                </a>
+                                <ul class="menu-sub menu-sub-show">
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title" data-menu="menu-sub">组织机构管理
+                                                <i class="down-icon"></i>
+                                            </a>
+                                            <ul class="menu-sub menu-sub-show oragn-manage">
+                                                <li><a href="#">新增组织机构</a></li>
+                                                <li><a href="#">修改组织机构</a></li>
+                                                <li><a href="#">解散组织机构</a></li>
+                                                <li><a href="#">排序</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">用户管理</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">权限管理</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="role-operate modal-footer">
+                            <button class="btn btn-active" data-target="distruct-Modal">分配权限</button>
+                            <button class="btn btn-primary " id="update-submit">保存</button>
+                            <button class="btn btn-primary close">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  todo 分配权限-->
+    <div class="modal" id="distruct-Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <h3>分配权限</h3>
+                    <span class="close-icon close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="form-default">
+                        <div class="form-group">
+                            <label class="form-info">角色名称：</label>
+                            <input type="text" class="form-primary"/>
+                        </div>
+                        <div class="form-group authority-group">
+                            <label class="form-info label-authority">拥有权限：</label>
+                            <div class="second-level-menu authority">
+                                <a href="#" class="sort-tilte" data-menu="menu-sub">系统管理
+                                    <i class="down-icon"></i>
+                                </a>
+                                <ul class="menu-sub menu-sub-show">
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title" data-menu="menu-sub">组织机构管理
+                                                <i class="down-icon"></i>
+                                            </a>
+                                            <ul class="menu-sub menu-sub-show oragn-manage">
+                                                <li><a href="#">新增组织机构</a></li>
+                                                <li><a href="#">修改组织机构</a></li>
+                                                <li><a href="#">解散组织机构</a></li>
+                                                <li><a href="#">排序</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">用户管理</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-menu">
+                                            <a href="#" class="sort-tilte organ-title">权限管理</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="role-operate modal-footer">
+                            <button class="btn btn-primary close">保存</button>
+                            <button class="btn btn-primary close">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/base.js"></script>
+    <script>
+        // todo 拥有权限功能
+        $('.own-authority').on('click','a',function(e){
+            e.preventDefault();
+            $('.own-authority .authority>a').html($(this).text()+'<i class="down-icon"></i>');
+            $('.own-authority .authority>a').next().removeClass('menu-sub-show');
+        })
+        $('.down-icon').click(function(){
+ 
+        })
+        // todo 添加角色
+        $('#add-submit').click(function(){
+            if(!$('input[name="roleName"]').val()){
+                errPop("角色名称不能为空！",'#roleTitle');
+            }else if(!$('input[name="roleText"]').val()){
+                errPop("角色描述不能为空！",'#roleText');
+            }else {
+                // todo 获取弹出框的内容
+                var json_organText = [
+                    {
+                        "order": parseInt(Math.random() * 10), "roleTitle": $('#roleTitle').val(),
+                        "roleText": $('#roleText').val(), "creater": "管理员", "isAbled": "可用",
+                    }];
+                $('#user-list').append(`
+            <tr>
+                <td>
+                      <input type="checkbox" class="check-icon"/>
+                 </td>
+                 <td>${json_organText[0].order}</td>
+                 <td>${json_organText[0].roleTitle}</td>
+                 <td>${json_organText[0].roleText}</td>
+                 <td>${json_organText[0].creater}</td>
+                 <td>${json_organText[0].isAbled}</td>
+            </tr>  `
+                );
+                $(this).parents('.modal').eq(0).removeClass('show');
+            }
+        });
+        //  todo 修改程序
+        /* todo 全选操作 */
+        $('#check-all').click(function () {
+            allSel(this,'#user-list :checkbox');
+        })
+        // todo 子复选框判断全选事件
+        $("#user-list").on('click',':checkbox',function(){
+            allchk('#user-list :checkbox','#check-all');
+        });
+        $('#update-submit').click(function(){
+             var target=$('#user-list').find('.check-icon:checked').parent().parent();
+            var order=$(target).children().eq(0);
+            $(target).children().eq(2).html($('#role-name').val());
+            $(target).children().eq(3).html($('#role-desc').val());
+            $(this).parents('.modal').eq(0).removeClass('show');
+        })
+        // todo 删除用户角色
+        $('#delete-user').click(function () {
+           $('#user-list').find('.check-icon:checked').parent().parent().remove();
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        /* transition */
+        .tran-container {
+            padding: 20px;
+            background-color: #f0f3f9;
+        }
+        .trans-list {
+            width: 10%;
+            height: 64px;
+            margin: 10px 0;
+            background-color: #486AAA;
+            color: #fff;
+            text-align: center;
+        }
+        .ease {
+            -webkit-transition: all 4s ease;
+            -moz-transition: all 4s ease;
+            -o-transition: all 4s ease;
+            transition: all 4s ease;
+        }
+        .ease_in {
+            webkit-transition: all 4s ease-in;
+            -moz-transition: all 4s ease-in;
+            -o-transition: all 4s ease-in;
+            transition: all 4s ease-in;
+        }
+        .ease_out {
+            -webkit-transition: all 4s ease-out;
+            -moz-transition: all 4s ease-out;
+            -o-transition: all 4s ease-out;
+            transition: all 4s ease-out;
+        }
+        .ease_in_out {
+            -webkit-transition: all 4s ease-in-out;
+            -moz-transition: all 4s ease-in-out;
+            -o-transition: all 4s ease-in-out;
+            transition: all 4s ease-in-out;
+        }
+        .linear {
+            -webkit-transition: all 4s linear;
+            -moz-transition: all 4s linear;
+            -o-transition: all 4s linear;
+            transition: all 4s linear;
+        }
+        .tran-container:hover .trans-list{
+            margin-left: 89%;
+            background-color: #beceeb;
+            color: #333;
+            border-radius: 25px;
+            transform: rotate(360deg);
+        }
+
+        /* transform */
+        .transform-container {
+
+        }
+        .transform-list.trans-rotate {
+            display: block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background: #beceeb;
+            margin: 30px auto;
+            text-align: center;
+            -webkit-transition: all 2s ease-in-out;
+        }
+        .transform-list.trans-rotate:hover {
+            -webkit-transform: rotate(720deg) scale(2,2);
+            -moz-transform: rotate(720deg) scale(2,2);
+            -o-transform: rotate(720deg) scale(2,2);
+            transform: rotate(720deg) scale(2,2);
+        }
+        /*animate*/
+        .animate-content {
+
+        }
+        .animate-list {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #beceeb;
+            background-color: #f0f3f9;
+            margin: 40px auto;
+        }
+        @keyframes resize {
+        0% {
+            padding:  0;
+        }
+        50% {
+            padding:  0 20px;
+            background-color: rgba(190,206,235,0.2)
+        }
+        50% {
+            padding:  0 100px;
+            background-color: rgba(190,206,235,0.9)
+        }
+        }
+        .animate-list:hover {
+          /*  -webkit-animation-name: resize;
+            -webkit-animation-duration: 1.5s;
+            -webkit-animation-iteration-count: 4;
+            -webkit-animation-direction: alternate;
+            -webkit-animation-timing-function: ease-in-out;*/
+            animation: resize 4s ease-in-out 0s infinite normal;
+        }
+    </style>
+</head>
+<body>
+<!--transition-->
+<div class="tran-container">
+    <div class="trans-list ease">esae</div>
+    <div class="trans-list ease_in">ease_in</div>
+    <div class="trans-list ease_out">ease_out</div>
+    <div class="trans-list ease_in_out">ease_in_out</div>
+    <div class="trans-list linear">linear</div>
+</div>
+<!--transform-->
+<div class="transform-container">
+    <div class="transform-list trans-rotate">Hover Me</div>
+</div>
+<!--animate-->
+<div class="animate-content">
+    <div class="animate-list"></div>
+</div>
+
+    <script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+</script>
+</body>
+</html>

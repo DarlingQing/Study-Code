@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+
+
+    <script>
+        var obj1 = {
+            name: 'HQ',
+            age: 23
+        }
+        var obj2 = {
+            name: 'HQ',
+            age: 23
+        }
+        var obj3 = {
+            name: 'HQ',
+            age: 22
+        }
+        //1:转换字符串来判断
+        console.log(
+            JSON.stringify(obj1) === JSON.stringify(obj2),
+            JSON.stringify(obj1) === JSON.stringify(obj3)
+        ) 
+        //2:遍历对象属性
+        function diff(obj1,obj2){
+            var o1 = obj1 instanceof Object;
+            var o2 = obj2 instanceof Object;
+            if(!o1 || !o2){     //判断不是对象
+                return obj1 === obj2;
+            }
+            if(Object.keys(obj1).length !== Object.keys(obj2).length){
+                return false;
+            }
+            for(attr in obj1){
+                var t1 = obj1[attr] instanceof Object;
+                var t2 = obj2[attr] instanceof Object;
+                if(t1 && t2){
+                    return diff(obj1[attr],obj2[attr]);
+                }else if(obj1[attr] !== obj2[attr]){
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(
+            diff(obj1,obj2),
+            diff(obj1,obj3)
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+
+<script>
+    var array = [1,2,4,5,4,7];
+    Array.prototype.unique = function () {
+        var newArray = [];
+        for(var i=0;i<this.length;i++){
+            if(newArray.indexOf(this[i])==-1){
+                newArray.push(this[i]);
+            }
+        }
+        return newArray;
+    }
+
+    Array.prototype.unique2 = function(){
+        return Array.from(new Set(array))
+    }
+
+    Array.prototype.unique3 = function () {
+        var hashArr = {};
+        var resultArr = [];
+        for(var i=0;i<this.length;i++){
+            if(!hashArr[this[i]]){
+                hashArr[this[i]] = true;
+                resultArr.push(this[i])
+            }
+        }
+        return resultArr;
+    }
+
+    console.log(array.unique());
+    console.log(array.unique2());
+</script>
+</body>
+</html>

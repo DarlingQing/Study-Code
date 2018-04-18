@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/OA系统/css/base.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OA系统/css/login.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OA系统/css/user-manage.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OA系统/js/base.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/base.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/myAPI.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/base.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/model.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/myAPI.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

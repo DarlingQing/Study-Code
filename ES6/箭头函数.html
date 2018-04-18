@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+</div>
+    <script src="../js/jquery-1.11.3.js"></script>
+<script>
+    var list = [1,2,3];
+    //ES6创建对象,足以
+    var resultList1 = list.map(key => ({ index: key}));
+    console.log(resultList1,resultList1.length,);
+
+    //高阶函数,也叫柯里化
+    function add(x) {
+        return function (y) {
+            return y+x;
+        }
+    }
+    //const add =x=>y=>y+x;
+    var addTwo = add(2);
+    console.log(addTwo,addTwo(3));
+
+    //const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+    function capitalizeEveryWord(str){
+        return str.replace(/\b\w/g,function (char) {
+            return char.toUpperCase();
+        })
+    }
+   console.log(capitalizeEveryWord('hello world!'))
+
+    function is(p) {
+        return function(v){
+            return function(o){
+                return o.hasOwnProperty(p)&& o[p]==v
+            }
+        }
+    }
+</script>
+</body>
+</html>

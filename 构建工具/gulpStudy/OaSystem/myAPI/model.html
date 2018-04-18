@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基础模板</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        #right-Panel {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 基础模板-->
+<div id="right-Panel">
+    <div id="btn-controls">
+        <h2>按钮组件</h2>
+        <button class="btn btn-deafult">默认</button>
+        <button class="btn btn-primary">基础</button>
+        <button class="btn btn-active">活跃</button>
+        <button class="btn btn-disabled">禁用</button>
+        <button class="btn btn-active btn-lg">大按钮</button>
+        <!-- 按钮组-->
+        <h2>按钮组</h2>
+        <div class="btn-group">
+            <button class="btn btn-deafult">按钮1</button>
+            <button class="btn btn-deafult">按钮2</button>
+            <button class="btn btn-deafult">按钮3</button>
+            <button class="btn btn-deafult btn-group-active">按钮4</button>
+            <button class="btn btn-deafult">按钮5</button>
+        </div>
+        <h2>按钮弹出框</h2>
+        <button class="btn btn-active" data-target="myModal" id="clickme">点击出现弹出框</button>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-title">
+                        <h3>Modal-Title</h3>
+                        <span class="close-icon close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <h4>主体部分</h4>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam architecto assumenda
+                        aut
+                        doloribus et eum eveniet excepturi explicabo in, labore magni modi neque possimus quae sint
+                        suscipit tempore
+                        voluptas?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-active close">确定</button>
+                        <button class="btn btn-primary close">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-active" data-target="sm-Modal" id="clickme1">点击出现弹出框</button>
+        <div class="modal" id="sm-Modal">
+            <div class="modal-dialog sm-modal">
+                <div class="modal-content">
+                    <div class="modal-title">
+                        <h3>Modal-Title</h3>
+                        <span class="close-icon close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <h4>主体部分</h4>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam architecto assumenda
+                        aut
+                        doloribus et eum eveniet excepturi explicabo in, labore magni modi neque possimus quae sint
+                        suscipit tempore
+                        voluptas?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-active close">确定</button>
+                        <button class="btn btn-primary close">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  todo  表格基础样式-->
+    <div id="table-controls">
+        <h2>表格基础样式</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID <i class="line-icon"></i></th>
+                <th>增加 <i class="line-icon"></i></th>
+                <th>删除 <i class="line-icon"></i></th>
+                <th>查看</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>001</td>
+                <td>域名地址</td>
+                <td>删除</td>
+                <td>资料</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" class="table-content">已经没有更多数据可以加载了</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!--  todo 下拉菜单-->
+    <div id="dropdowm-controls">
+        <h2>下拉菜单</h2>
+        <div class="dropdown">
+            <button class="btn btn-deafult dropdown-toggle" data-toggle="dropdown">
+                <a href="#">组织机构管理</a>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#" title="组织机构管理">组织机构管理</a></li>
+                <li class="active"><a href="#" title="用户管理">用户管理</a></li>
+                <li><a href="#" title="角色权限管理">角色权限管理</a></li>
+            </ul>
+        </div>
+        <h2>二级下拉菜单</h2>
+        <div class="second-level-menu">
+            <a href="#" class="sort-tilte" data-menu="menu-sub">分类
+                <i class="down-icon"></i>
+            </a>
+            <ul class="menu-sub">
+                <li><a href="#">组织机构管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">权限管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 标签页-->
+    <div id="tab-controls">
+        <h2>水平标签页</h2>
+        <div class="nav-tabs">
+            <ul class="tabs-inline tab-choice">
+                <li class="tab-active"><a href="#home">财经</a></li>
+                <li><a href="#news">新闻</a></li>
+                <li><a href="#games">娱乐</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-active" id="home">
+                    财经Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet veniam
+                    voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore, magnam modi
+                    porro voluptate? Cum.
+                </div>
+                <div id="news">
+                    新闻Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet veniam
+                    voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore, magnam modi
+                    porro voluptate? Cum.
+                </div>
+                <div id="games">
+                    娱乐Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet veniam
+                    voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore, magnam modi
+                    porro voluptate? Cum.
+                </div>
+            </div>
+        </div>
+        <h2>垂直标签页</h2>
+        <!--TODO  js调用时用父级元素N class属性 navtabs调用-->
+        <div class="nav-tabs tabs-vertical">
+            <div id="left-bar" class="slidebar">
+                <h2 class="nav-title">组织机构管理 <span class="fold-menu" data-hide="left-bar"></span></h2>
+                <ul class="tab-list tab-choice">
+                    <li class="tab-active"><a href="#organ">阻止</a></li>
+                    <li><a href="#user">用户</a></li>
+                    <li><a href="#role">角色</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-active" id="organ">阻止</div>
+                <div id="user"> 用户</div>
+                <div id="role">角色</div>
+            </div>
+        </div>
+    </div>
+    <!--  todo 分页-->
+    <div id="page-controls">
+        <h2>分页</h2>
+        <ul class="pages">
+            <li><a class="pages-first pages-disabled" href="#"></a></li>
+            <li><a class="pages-prev" href="#"></a></li>
+            <li><a class="pages-text" href="#">1</a></li>
+            <li><a class="pages-next" href="#"></a></li>
+            <li><a class="pages-last pages-disabled" href="#"></a></li>
+        </ul>
+    </div>
+    <!--  todo 表单-->
+    <div id="form-controls">
+        <h2>表单</h2>
+        <form action="#" class="form-default">
+            <div class="form-title">个人信息</div>
+            <div class="form-group">
+                <label class="form-info">请输入您的姓名</label>
+                <span class="form-default">同花顺有限公司</span>
+            </div>
+            <div class="form-group">
+                <label class="form-info">组织机构单位</label>
+                <input type="text" class="form-primary"/>
+            </div>
+            <div class="form-group">
+                <label class="form-info">请输入密码</label>
+                <input type="password" class="form-primary"/>
+            </div>
+            <div class="form-group">
+                <label class="form-info">请输入数量</label>
+                <select class="form-select">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-info">请选择性别</label>
+                <input type="radio"  name="sex" value="1"/>男
+                <input type="radio"  name="sex" value="0"/>女
+            </div>
+            <div class="form-group">
+                <label class="form-info">类型：</label>
+                <input type="checkbox" name="type" value="1">A轮
+                <input type="checkbox" name="type" value="2">B轮
+                <input type="checkbox" name="type" value="3">C轮
+            </div>
+            <div class="form-group">
+                <label class="form-info">描述：</label>
+                <textarea class="form-textarea"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="form-submit">
+                    <input type="submit" class="btn btn-active"/>
+                    <input type="reset" class="btn btn-primary"/>
+                </div>
+            </div>
+        </form>
+        <h2>搜索表单</h2>
+        <div class="search-group">
+            <input type="text" class="input-search"/>
+            <button class="btn btn-search"></button>
+        </div>
+    </div>
+    <div id="tips-controls">
+        <h2>工具提示</h2>
+        <div class="tool-tips">
+            <button class=" btn btn-primary tips-title">提示信息1</button>
+            <div class="tips-content">
+                Tooltip默认在下方
+            </div>
+        </div>
+    </div>
+    <div id="load-controls">
+        <h2>加载进度</h2>
+        <button class="btn btn-primary" data-alert="top-alert">点我显示加载状态</button>
+        <div class="top-alert">
+            <span class="top-alert-icon-doing">正在加载.....</span>
+        
+        </div>
+    </div>
+</div>
+</div>
+<!-- 加载提示-->
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/base.js"></script>
+<script src="js/model.js"></script>
+</body>
+</html>

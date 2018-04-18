@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>后台管理基本控件样式</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="OA系统/css/base.css"/>
+    <link rel="stylesheet" href="css/myAPI.css"/>
+</head>
+<body>
+<div id="container">
+    <!-- todo 头部-->
+    <header id="header">
+        <h1>后台管理基本控件样式</h1>
+
+        <h2>对后台管理常见的常用控件组件进行样式定义，并利用其扩展的class属性以及data扩展增强其展示样式
+        </h2>
+    </header>
+    <!-- todo 主体部分-->
+    <div id="main">
+        <!--  TODO 控件列表-->
+        <div id="left">
+            <h2 class="title">控件目录</h2>
+            <ul class="left-lists">
+                <li class="list-active"><a href="#catalogue">概述</a></li>
+                <li><a href="#btn-controls">按钮组件</a></li>
+                <li><a href="#table-controls">表格样式</a></li>
+                <li><a href="#dropdown-controls">下拉菜单</a></li>
+                <li><a href="#tab-controls">标签页</a></li>
+                <li><a href="#page-controls">分页</a></li>
+                <li><a href="#form-controls">表单</a></li>
+                <li><a href="#tips-controls">工具提示</a></li>
+                <li><a href="#load-controls">加载控件</a></li>
+                <li><a href="#">返回顶部</a></li>
+            </ul>
+        </div>
+        <!--  todo 详细解说-->
+        <div id="right">
+            <div id="catalogue">
+                <h3>概述说明</h3>
+
+                <p>该样式控件是针对后台管理系统编写的一套CSS样式，插件是基于jQuery基础上编写的，
+                    在使用前需引入对应的css文件以及js文件，及images文件</p>
+
+                <p><a href="#">base.css文件</a>是针对后台管理系统编写的样式库，<a href="#">base.js脚本</a>
+                    实现了控件的结构，需依赖jQuery.js脚本之上。
+                </p>
+            </div>
+            <div id="btn-controls">
+                <h3>按钮</h3>
+                <h4>预定义样式</h4>
+
+                <p>使用下面列出的类可以快速创建一个带有预定义样式的按钮</p>
+
+                <p><span>.btn</span> 提供了默认按钮的样式，每个按钮都自带 <span>class=".btn"</span> 类</p>
+
+                <p><span>.primary</span> 提供了按钮的基础样式 <span>class=".btn .btn-primary"</span></p>
+
+                <p><span>.btn-active</span>提供了按钮活跃状态的样式 <span>class=".btn .btn-active"</span></p>
+
+                <p><span>.btn-disabled</span>提供了按钮处于禁用状态时的样式 <span>class=".btn .btn-disabled"</span></p>
+
+                <p><span>.btn-lge</span>当前按钮为大一号的样式 <span>class=".btn .btn-lg"</span></p>
+
+                <div class="demo">
+                    <h4>demo</h4>
+                    <button class="btn btn-deafult">默认</button>
+                    <button class="btn btn-primary">基础</button>
+                    <button class="btn btn-active">活跃</button>
+                    <button class="btn btn-disabled">禁用</button>
+                    <button class="btn btn-active btn-lg">大按钮</button>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API01.png"/>
+                </div>
+                <h4>按钮组件</h4>
+
+                <p><span>.btn-group</span>为按钮组容器，把一组按钮放在同一行里,该类需放在一个容器元素中包装按钮元素</p>
+
+                <p><span>.btn-deafult</span>为按钮组中的按钮元素默认类样式 <span>class="btn btn-default"</span></p>
+
+                <p><span>.btn-group-active</span>为按钮组中的按钮当前处于活跃状态</p>
+
+                <div class="demo">
+                    <h4>demo</h4>
+
+                    <div class="btn-group">
+                        <button class="btn btn-deafult">按钮1</button>
+                        <button class="btn btn-deafult">按钮2</button>
+                        <button class="btn btn-deafult">按钮3</button>
+                        <button class="btn btn-deafult btn-group-active">按钮4</button>
+                        <button class="btn btn-deafult">按钮5</button>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API02.png"/>
+                </div>
+                <h4>按钮弹出模态框框</h4>
+
+                <p>弹出框需提供了一个按钮或者a标签，采用
+                    <span>data-target</span>属性点击需要弹出框的容器元素,该属性的目标元素为模态框设置id的值
+                </p>
+
+                <p><span>.modal</span>为模态框容器，该容器包括了头、主体和尾部3部分</p>
+
+                <p>需要写一句js代码，为按钮添加点击事件，调用showModal()事件：
+                    <span>$('.btn').click(function($(this).showModal()))</span>
+                </p>
+
+                <div class="demo">
+                    <h4>demo</h4>
+                    <button class="btn btn-active" data-target="myModal" id="clickme">点击出现弹出框</button>
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-title">
+                                    <h3>Modal-Title</h3>
+                                    <span class="close-icon close">&times;</span>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>主体部分</h4>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam
+                                    architecto assumenda
+                                    aut
+                                    doloribus et eum eveniet excepturi explicabo in, labore magni modi neque possimus
+                                    quae sint
+                                    suscipit tempore
+                                    voluptas?
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-active close">确定</button>
+                                    <button class="btn btn-primary close">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API03.png"/>
+                </div>
+            </div>
+            <div id="table-controls">
+                <h3>表格基础样式</h3>
+
+                <p><span>.table</span>为表格提供了表格的基础类 <span>class=".table"</span></p>
+
+                <p>在表格的默认样式上进行了样式重构，包括 th、td、thead、tbody、tfoot</p>
+
+                <p><span>.line-icon</span>类为标记符，在th标签中添加一标记元素增加其类，实现两列的分隔线效果
+                    <span>&lt;i class="line-icon"&gt;&lt;/i&gt;</span>
+                </p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ID <i class="line-icon"></i></th>
+                            <th>增加 <i class="line-icon"></i></th>
+                            <th>删除 <i class="line-icon"></i></th>
+                            <th>查看</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>域名地址</td>
+                            <td>删除</td>
+                            <td>资料</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="4" class="table-content">已经没有更多数据可以加载了</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API04.png"/>
+                </div>
+            </div>
+            <div id="dropdown-controls">
+                <h3>下拉菜单</h3>
+                <p><span>.dropdown</span>为下拉菜单容器，将下拉菜单的元素放在该容器元素中</p>
+
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-deafult dropdown-toggle" data-toggle="dropdown">
+                            <a href="#">组织机构管理</a>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="组织机构管理">组织机构管理</a></li>
+                            <li class="active"><a href="#" title="用户管理">用户管理</a></li>
+                            <li><a href="#" title="角色权限管理">角色权限管理</a></li>
+                        </ul>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API05.png"/>
+                </div>
+                <h3>二级下拉菜单</h3>
+                <p><span>.second-level-menu</span>为二级下拉菜单容器，将下拉菜单的元素放在该容器元素中</p>
+                <p><span>.sort-tilte</span>为下拉菜单标题的样式，其中需添加 <span>data-menu="menu-sub"</span>
+                    属性制定可以下拉列表
+                </p>
+                <p><span>.down-icon</span>为下拉菜单标题的标记符号</p>
+                <p><span>.meni-sub</span>为下拉列表的样式</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="second-level-menu">
+                        <a href="#" class="sort-tilte" data-menu="menu-sub">分类
+                            <i class="down-icon"></i>
+                        </a>
+                        <ul class="menu-sub">
+                            <li><a href="#">组织机构管理</a></li>
+                            <li><a href="#">用户管理</a></li>
+                            <li><a href="#">权限管理</a></li>
+                        </ul>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API05-02.png"/>
+                </div>
+
+            </div>
+            <div id="tab-controls">
+                <h3>标签页</h3>
+                <h4>水平标签页</h4>
+                <p><span>.nav-tabs</span>为标签页容器，将标签页的内容放在该容器元素中添加该类</p>
+                <p><span>.tab-inline</span>为水平标签页的列表样式</p>
+                <p><span>.tab-content</span>为水平标签页列表对应的内容容器</p>
+                <p><span>.tab-active</span>为水平标签页内容当前处于活动状态</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="nav-tabs">
+                        <ul class="tabs-inline tab-choice">
+                            <li class="tab-active"><a href="#home">财经</a></li>
+                            <li><a href="#news">新闻</a></li>
+                            <li><a href="#games">娱乐</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-active" id="home">
+                                财经Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet
+                                veniam
+                                voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore,
+                                magnam modi
+                                porro voluptate? Cum.
+                            </div>
+                            <div id="news">
+                                新闻Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet
+                                veniam
+                                voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore,
+                                magnam modi
+                                porro voluptate? Cum.
+                            </div>
+                            <div id="games">
+                                娱乐Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut earum eveniet
+                                veniam
+                                voluptates. Aliquam beatae dicta dignissimos dolorem eum eveniet illo in ipsam labore,
+                                magnam modi
+                                porro voluptate? Cum.
+                            </div>
+                        </div>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API08.png"/>
+                </div>
+                <h4>垂直标签页</h4>
+
+                <p><span> .nav-tabs .tabs-vertical</span>为垂直标签页的样式，盛放标签页的父容器需同时添加这两个类</p>
+
+                <p><span>.tab-list</span>为垂直标签页的列表样式</p>
+
+                <p><span>.tab-content</span>为垂直标签页的内容样式</p>
+
+                <p><span>.tab-active</span>为水平标签页内容当前处于活动状态</p>
+
+                <div class="demo">
+                    <h4>demo</h4>
+
+                    <div class="nav-tabs tabs-vertical">
+                        <div class="slidebar">
+                            <ul class="tab-list tab-choice">
+                                <li class="tab-active"><a href="#organ">阻止</a></li>
+                                <li><a href="#user">用户</a></li>
+                                <li><a href="#role">角色</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="right-panel">
+                            <div class="tab-active" id="organ">阻止</div>
+                            <div id="user"> 用户</div>
+                            <div id="role">角色</div>
+                        </div>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API06.png"/>
+                </div>
+                <p><span>.nav-title</span>额外增加了列表标题的样式</p>
+                <p>
+                    <span>.fold-menu</span>为左右列表切换样式的类,放在列表标题样式里，
+                    <span>data-hide</span>属性对应的是左侧容器的id值，表示要隐藏的容器
+                </p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="nav-tabs tabs-vertical">
+                        <div id="left-bar" class="slidebar">
+                            <h2 class="nav-title">组织机构管理 <span class="fold-menu" data-hide="left-bar"></span></h2>
+                            <ul class="tab-list">
+                                <li class="tab-active"><a href="#organ1">阻止</a></li>
+                                <li><a href="#user1">用户</a></li>
+                                <li><a href="#role1">角色</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-active" id="organ1">阻止</div>
+                            <div id="user1"> 用户</div>
+                            <div id="role1">角色</div>
+                        </div>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API07.png"/>
+                </div>
+            </div>
+            <div id="page-controls">
+                <h3>分页基础样式</h3>
+                <p><span>.page</span>为分页容器，将分页列表组件放在该容器元素中添加该类</p>
+                <p><span>.page-first</span>为首页的样式</p>
+                <p><span>.page-prev</span>为上一页的样式</p>
+                <p><span>.page-next</span>为下一页的样式</p>
+                <p><span>.page-last</span>为尾页的样式</p>
+                <p><span>.pages-disabled</span>为当前该页列不能点击时的状态</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <ul class="pages">
+                        <li><a class="pages-first pages-disabled" href="#"></a></li>
+                        <li><a class="pages-prev" href="#"></a></li>
+                        <li><a class="pages-text" href="#">1</a></li>
+                        <li><a class="pages-next" href="#"></a></li>
+                        <li><a class="pages-last pages-disabled" href="#"></a></li>
+                    </ul>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API09.png"/>
+                </div>
+            </div>
+            <div id="form-controls">
+                <h3>表单基础样式</h3>
+                <h4>默认表单</h4>
+                <p><span>.form-default</span>为默认表单的样式，在使用该默认表单时需再表单容器中添加该类</p>
+                <p><span>.form-title</span>为默认表单中标题的样式</p>
+                <p><span>.form-group</span>为表单组样式，用于实现表单列间距分离</p>
+                <p><span>.form-info</span>为表单内容信息样式</p>
+                <p><span>.form-default</span>为input的默认样式</p>
+                <p><span>.form-primary</span>为input的基础样式</p>
+                <p><span>.form-select</span>为下拉框的样式</p>
+                <p><span>.form-textarea</span>为文本框的样式</p>
+                <p><span>.form-submit</span>为表单提交的容器样式</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <form action="#" class="form-default">
+                        <div class="form-title">个人信息</div>
+                        <div class="form-group">
+                            <label class="form-info">请输入您的姓名</label>
+                            <span class="form-default">同花顺有限公司</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">组织机构单位</label>
+                            <input type="text" class="form-primary"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">请输入密码</label>
+                            <input type="password" class="form-primary"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">请输入数量</label>
+                            <select class="form-select">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">请选择性别</label>
+                            <input type="radio"  name="sex" value="1"/>男
+                            <input type="radio"  name="sex" value="0"/>女
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">类型：</label>
+                            <input type="checkbox" name="type" value="1">A轮
+                            <input type="checkbox" name="type" value="2">B轮
+                            <input type="checkbox" name="type" value="3">C轮
+                        </div>
+                        <div class="form-group">
+                            <label class="form-info">描述：</label>
+                            <textarea class="form-textarea"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-submit">
+                                <input type="submit" class="btn btn-active"/>
+                                <input type="reset" class="btn btn-primary"/>
+                            </div>
+                        </div>
+                    </form>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API10.png"/>
+
+                </div>
+                <h4>搜索表单</h4>
+                <p><span>.search-group</span>为搜索表单，设置容器时需添加该样式</p>
+                <p><span>.input-search</span>为搜索表单输入框的样式</p>
+                <p><span>.btn .btn-search</span>为搜索框提交的样式，可用于按钮或a标签上</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="search-group">
+                        <input type="text" class="input-search"/>
+                        <button class="btn btn-search"></button>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API11.png"/>
+                </div>
+
+            </div>
+            <div id="tips-controls">
+                <h3>工具提示</h3>
+                <p><span>.tool-tips</span>为工具提示容器的样式，将其内容放在一个容器中需添加该类</p>
+                <p><span>.tips-title</span>为工具提示信息的样式</p>
+                <p><span>.tips-content</span>为工具提示的内容</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <div class="tool-tips">
+                        <button class=" btn btn-primary tips-title">提示信息1</button>
+                        <div class="tips-content">
+                            Tooltip默认在下方
+                        </div>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API12.png"/>
+                </div>
+            </div>
+            <div id="load-controls">
+                <h3>加载控件</h3>
+                <p><span>.top-alert</span>为加载容器的样式，对给定容器元素需添加该类</p>
+                <p><span>.top-alert-icon-doing</span>为容器中图标的样式</p>
+                <p>对点击的标签元素需添加 <span>data-alert="top-alert"</span>触发加载容器元素为加载状态</p>
+                <div class="demo">
+                    <h4>demo</h4>
+                    <button class="btn btn-primary" data-alert="top-alert">点我显示加载状态</button>
+                    <div class="top-alert">
+                        <span class="top-alert-icon-doing">正在加载.....</span>
+                    </div>
+                    <h4>代码片段示例</h4>
+                    <img src="images/API-images/API13.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/base.js"></script>
+<script src="js/myAPI.js"></script>
+</body>
+</html>

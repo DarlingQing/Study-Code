@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+
+//数组的空位：数组的某一个位置没有任何值，Array构造函数返回的数组都是空位
+console.log(Array(3)==[,,]);
+console.log(0 in [,undefined,]);
+
+//ES5对空位的处理，很多不一致，大多数情况下会被忽略
+//forEach(),filter(),every(),some()方法都会跳过空位置
+//map()会跳过空位，但会保留这个值
+//join()和toString()会将空位视为undefined，
+//undefined和null会被当做空字符串
+
+//ES6中明确将空位转为undefined,不会被忽略
+console.log(Array.from([1,,2]));
+
+
+</script>
+</body>
+</html>

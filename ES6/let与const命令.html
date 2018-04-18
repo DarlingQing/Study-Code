@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    'use strict';
+    //let变量 vs var定义变量
+    var a = 5;
+    var b = 10;
+    if (a === 5) {
+        let a = 4; // The scope is inside the if-block
+        var b = 1; // The scope is inside the function
+        console.log(a);  // 4
+        console.log(b);  // 1
+    }
+    console.log(a); // 5
+    console.log(b); // 1
+
+    //块级作用域  ==>函数自调(function(){})();
+    {{{
+        let tem = 1;
+        console.log("tem="+tem);
+    }}}  
+    (function(){
+        var tem1 = 2;
+        console.log("tem1="+tem1);
+    })();   
+
+
+    function f() { console.log('I am outside!'); }
+    (function () {
+      if (false) {
+        function f() { console.log('I am inside!'); }  //ES5中会函数声明提前
+      }
+      f();
+    }());   
+
+    //do表达式
+    /*let x = do {
+        let a=1;
+        a=a*a+1;
+    }
+    console.log(x);*/
+
+    //const命令
+    const PI = 3.1415;
+    //PI = 3;
+    console.log(PI); //PI会报错
+
+    //对于复合类型的数据(对象/数组)，变量指向的内存地址，保存的只是一个指针，
+    //但是指向的数据结构是不能控制的
+    const foo = {};
+    foo.prop = 123;
+    //foo = {}; //不能讲foo指向另一个地址，否则报错
+    console.log(foo);
+
+    //顶层对象
+    //ES6中，为了保持兼容性，var命令和function命令定义的全局变量，依旧是顶层对象的属性
+    var aa = 1;
+    console.log(window.a);
+
+    //let命令、const命令、以及import命令定义的全局变量，不属于顶层对象的属性
+    let bb = 2;
+    console.log(window.bb);
+
+    //global对象，浏览器里面顶层对象是window，Node和webworker中没有window对象,返回的global对象
+    //全局环境的this指向问题
+    //全局环境中，this返回的是window对象，但是在ES6和Node中，返回的是当前模块
+    //函数里面的this，如果函数不是作为对象的方式运行，而是单纯作为函数执行，那返回的是顶层对象
+</script>
+</body>
+</html>

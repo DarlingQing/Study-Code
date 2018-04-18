@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    function getPoint() {
+        var x=1;
+        var y=10;
+        return {x,y};
+    }
+    console.log(getPoint())
+
+    var Person = {
+        name: '张三',
+        birth:'1990-01-01',
+        // 等同于hello: function ()...
+        hello() { document.write('我的名字是', this.name); }
+    };
+    Person.hello();
+
+    let obj={};
+    obj.foo=true;
+    obj['a'+'bc']=123;
+    console.log(obj);
+
+    var target={ a:1 };
+    var source1={b:2};
+    var source2={c:2};
+    Object.assign(target,source1,source2);
+    console.log(target);
+
+    var P
+
+</script>
+</body>
+</html>

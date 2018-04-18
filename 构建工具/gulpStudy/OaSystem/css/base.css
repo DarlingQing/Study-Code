@@ -1,0 +1,479 @@
+/* 公共样式*/
+html,body,div,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ol,ul,form,caption,table,tr,td,th{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body {
+    fontSize: 14px;
+    color: #586376;
+    font-family: PingFangSC-Light, 'helvetica neue', 'hiragino sans gb', tahoma,
+        'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+}
+/* todo  字体样式*/
+h2 {
+    font-size: 2em;
+    margin-top: 10px 0;
+    color: #171d25;
+    font-weight: 400;
+}
+a {
+    color: #2277da;
+    text-decoration: none;
+}
+body a:hover {
+    text-decoration: none;
+}
+.a-bold {
+    font-weight: bold;
+}
+/* todo 按钮组件*/
+.btn {
+    border: 1px solid;
+    outline: 0;
+    padding: 0 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 27px;
+}
+.btn-deafult {
+    /* TODO 基础按钮*/
+    background: #fff;
+    border-color: #d1d2d3;
+    color: #454a51;
+}
+.btn-active {
+    background: #2277da;
+    color: #fff;
+    border: 1px solid #0064b6;
+}
+.btn-active:hover {
+    border-color: #005da8;
+    background: #006ba2;
+}
+.btn-disabled {
+    border-color: #d5d5d5;
+    background: #e8e8e8;
+    color: #a2a2a2;
+    cursor: not-allowed;
+}
+.btn-primary {
+    background: #fcfcfc;
+    border-color: #d1d2d3;
+    color: #2277da;
+}
+.btn-primary:hover {
+    background: #f2f2f2;
+    border-color: #b4b7bf
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 模态框*/
+.modal .modal-dialog {
+    width: 600px;
+    margin: 50px auto;
+    border: 1px solid #BFC2C5;
+}
+.modal .sm-modal{
+    width: 400px;
+}
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 999;
+    display: none;
+}
+.modal .modal-content {
+    background: #fff;
+    box-shadow: 0 0 5px #aaa;
+}
+.modal .modal-dialog .modal-title {
+    position: relative;
+    border-bottom: 1px solid #dadde0;
+    padding: 10px 15px 0 15px;
+}
+.modal .modal-dialog .modal-title h3 {
+    font-size: 1.7em;
+    color: #212a31;
+    font-weight: 400;
+    line-height: 50px;
+}
+.modal .close-icon {
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    cursor: pointer;
+    font: 400 18px Tahoma
+}
+.modal .close-icon:hover {
+    color: #2277da;
+}
+.modal-body {
+    padding: 30px 15px;
+    line-height: 23px;
+    color: #666;
+    border-bottom: 1px solid #dadde0;
+}
+.modal-footer {
+    border-top: 1px solid #dadde0;
+    position: relative;
+    text-align: center;
+    background-color: #f0f4f7;
+    padding: 15px;
+}
+/* todo 表格基础样式*/
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    /*table-layout: fixed;*/
+    width: 100%;
+}
+table thead {
+    background-color: transparent;
+    border: 0;
+    border-top: 1px solid #d1d5de;
+    border-bottom: 1px solid #d1d5de;
+}
+table thead tr {
+    outline: 0;
+    background: #f6f8fa;
+}
+table thead tr th {
+    text-align: left;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    position: relative;
+}
+table thead tr th:first-child:hover {
+    color: #2277da;
+}
+.line-icon {
+    border-right: 1px solid #d1d5de;
+    position: absolute;
+    right: 0;
+    height: 20px;
+    top: 5px;
+    cursor: e-resize;
+    padding: 0 5px;
+}
+table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table tbody tr {
+    border-bottom: 1px solid #d1d5de;
+}
+table tbody tr:hover {
+    background: #EAF3FD;
+}
+table tbody tr td {
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #d1d5de;
+}
+table tbody tr td:last-child {
+    border-right: 0;
+}
+table tfoot tr {
+    border-bottom: 1px solid #d1d5de;
+    line-height: 42px;
+}
+table tfoot tr:hover {
+    background: #EAF3FD;
+}
+table tfoot tr td {
+    display: table-cell;
+    text-align: center;
+}
+.table-content {
+    color: #333 !important;
+}
+.show {
+    display: block !important;
+}
+/*  todo 二级菜单*/
+.second-level-menu {
+    position: relative;
+}
+.sort-tilte {
+    color: #586376;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    display: block;
+    /*width: 150px;*/
+    padding-left: 15px;
+}
+.sort-tilte:hover {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2277da;
+}
+.down-icon {
+    position: absolute;
+    width: 11px;
+    height: 6px;
+    background-image: url(../images/sprites.png);
+    background-position: -114px -138px;
+    right: 24px;
+    top: 15px;
+}
+.menu-sub {
+    display: none;
+}
+.menu-sub-show{
+    display: block !important;
+}
+.menu-sub li {
+    padding-left: 15px;
+    line-height: 27px;
+    position: relative;
+}
+.menu-sub li a {
+    color: #586376;
+    padding-left: 17px;
+    line-height: 35px;
+}
+.menu-sub>li>a:before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #b2becd;
+    border-radius: 50%;
+    top: 15px;
+    left: 16px;
+}
+.menu-sub li a:hover{
+    text-decoration: none;
+    /*font-weight: 400;*/
+    color: #2277da;
+}
+/* todo 下拉菜单 */
+/* 按钮下拉菜单 */
+.dropdown > .dropdown-toggle {
+    color: #404a58;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    position: relative;
+    padding-right: 29px;
+    background: #fff;
+    z-index: 101;
+}
+.dropdown > .dropdown-toggle a {
+    color: #171d25;
+    text-decoration: none;
+}
+.caret {
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../../images/sprites.png);
+    background-position: -139px -152px;
+}
+.dropdown > .dropdown-menu {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    border: 1px solid #D1D5DE;
+    /*border-top: 0;*/
+    display: none;
+    z-index: 100;
+    background: #fff;
+}
+
+.dropdown > .dropdown-menu > li {
+    height: 35px;
+    line-height: 35px;
+}
+
+.dropdown > .dropdown-menu > li:hover {
+    background: #F2F2F2;
+}
+
+.dropdown > .dropdown-menu > li.active {
+    background-color: #2277da;
+    color: #fff;
+}
+
+.dropdown > .dropdown-menu > li.active a {
+    color: #fff;
+}
+
+.dropdown-menu > li a {
+    color: #404a58;
+    padding: 0 15px;
+    text-align: left;
+    min-width: 7em;
+    text-decoration: none;
+    font-size: 14px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.show {
+    display: block !important;
+}
+.hide{
+    display: none !important;
+}
+
+.dropdown .dropdown-active {
+    border: 1px solid #D1D5DE;
+    border-bottom: 0;
+}
+/* todo 标签页*/
+.nav-tabs {
+    position: relative;
+}
+.slidebar {
+    float: left;
+    /* position: relative; */
+    width: 199px;
+    border-right: 1px solid #cedfea;
+    background-color: #f0f6f6;
+    /* display: inline-block; */
+    height: 100%;
+    vertical-align: top;
+}
+
+.nav-tabs .nav-title {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    color: #171d25;
+    background-color: #f0f6f6;
+    width: 184px;
+    border-right: 1px solid #cedfea;
+    padding-left: 15px;
+    border-bottom: 1px solid #f8fbfb;
+    font-size: 22px;
+}
+
+.fold-menu {
+    position: absolute;
+    top: 13px;
+    right: -1px;
+    overflow: hidden;
+    width: 16px;
+    height: 36px;
+    border: 1px solid #c7e0ef;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    background: url(../images/top-menu.png) -72px -40px no-repeat #f7fdfd;
+    z-index: 100;
+}
+.react {
+    position: absolute;
+    right: -17px;
+    border: 1px solid #c7e0ef;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background: url(../images/top-menu.png) -87px -40px no-repeat #f0f6f6;
+    z-index: 101;
+}
+/* todo 表单*/
+/* 默认表单*/
+.form-default {
+}
+.form-default .form-title {
+    font-weight: 700;
+    line-height: 52px;
+    color: #454a51;
+    text-indent: 2em;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 12px;
+}
+.form-default .form-info {
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+    text-indent: 2em;
+    color: #999;
+    line-height: 27px;
+}
+.form-default .form-default {
+    border: 0;
+    color: #000000;
+}
+.form-default input.form-primary {
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    border: 1px solid #d1d2d3;
+    color: #404a58;
+    outline: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    vertical-align: middle;
+    min-width: 350px;
+}
+.form-default input.form-primary:hover {
+    border-color: #2277da;
+    outline: 0;
+}
+.form-default .form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    line-height: 24px;
+    height: 24px;
+    padding: 0;
+    min-width: 50px;
+    font-size: 12px;
+    margin: 0 3px 0 0;
+    outline: 0;
+    border-radius: 3px;
+    background-color: #fff;
+    background: url(../images/select.png) no-repeat;
+    background-position: right center;
+    box-shadow: none;
+    text-indent: 5px;
+    display: inline-block;
+}
+.form-default .form-select:hover{
+    border-color: #2277da;
+    outline: 0;
+}
+.form-default .form-textarea {
+    display: inline-block;
+    border: 1px solid #d1d2d3;
+    border-radius: 3px;
+    min-width: 350px;
+    min-height: 50px;
+    vertical-align: middle;
+    font-size: 14px;
+    outline: 0;
+    color: #404a58;
+    padding: 5px 10px;
+    resize: none;
+}
+.form-default .form-textarea:hover{
+    border-color: #2277da;
+    outline: 0;
+}
+.form-default .form-submit{
+    margin-left: 200px;
+}

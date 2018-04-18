@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .mutil-line-ellipsis {
+            width: 400px;
+            height: 100px;
+            margin: 20px 20px 50px 300px;
+            border: 5px solid #AAA;
+            line-height: 25px;
+            overflow: hidden;
+        }
+        /*相当于之前的prop*/
+        .mutil-line-ellipsis:before {
+            content: '';
+            float: left;
+            width: 5px;/*缩小宽度为5px，其余属性不变*/
+            height: 100px;
+        }
+        /*相当于之前的main*/
+        .mutil-line-ellipsis > :first-child {
+            float: right;
+            width: 100%;
+            margin-left: -5px;/*让main元素左移5px，这样main元素在宽度上就完全占满了父元素；*/
+            word-break: break-all;
+        }
+        /*相当于之前的realEnd*/
+        .mutil-line-ellipsis:after {
+            content: '...';
+            box-sizing: content-box;
+            float: right;
+            position: relative;
+            width: 50px;
+            height: 100px;
+            top: -25px; /*等于高度的负值，就是文字的行高*/
+            left: 100%;
+            /*而设置margin-left: -50px、padding-right: 5px则是为了让realend元素的盒模型的最终宽度计算为5px。*/
+            margin-left: -50px;
+            padding-right: 5px;
+            font-size: 13px;
+            text-align: right;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="mutil-line-ellipsis">
+        <div>
+            2.main 这里是要多行文本溢出省略的，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+            内容多一点，内容多一点，内容多一点，内容多一点，内容多一点，内容多一点
+        </div>
+    </div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+</script>
+</body>
+</html>

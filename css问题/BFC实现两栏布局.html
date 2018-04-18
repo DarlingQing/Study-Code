@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       #div {
+            width: 500px;
+            border: 1px solid;
+            white-space: initial;
+            word-break: break-all;
+            position: relative;
+           
+       }
+       .aside {
+           width: 100px;
+           height: 150px;
+           background: #f66;
+           float: left;
+       }
+       .main {
+           height: 200px;
+           background: #fcc;
+           /*触发第二个元素的BFC特性，加入overflow为hidden，能实现两栏布局*/
+           overflow: hidden;  
+       }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <div class="aside">
+
+        </div>
+        <div class="main"></div>
+    </div>
+
+    <script>
+      
+    </script>
+</body>
+</html>

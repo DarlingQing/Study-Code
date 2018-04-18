@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main {
+            height: 400px;
+        }
+        .side-tool {
+            position: fixed;
+            right: 15px;
+            bottom: 10px;
+            z-index: 999;
+        }
+        .go-to-btn {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 5px;
+            display: none;
+        }
+        .box-list {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+        <div id="main">aaa</div>
+        <div class="content">
+        <ul class="box-content">
+          <li class="box-list"></li>
+          <li class="box-list"></li>
+          <li class="box-list"></li>
+          <li class="box-list"></li>
+       </ul>
+        </div>
+        <div class="side-tool">
+            <a id="goTopBtn" class="go-to-btn" href="javascript:;" title="返回顶部"></a>
+        </div>
+
+    <script>
+        window.onload = function(){
+             function hasScrollBar(){
+                 return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)
+            }
+            var goTopBtn = document.getElementById('goTopBtn');
+            if(hasScrollBar()){
+                goTopBtn.style.display = 'block';
+            }
+            goTopBtn.addEventListener('click',function() {
+                document.body.scrollTop = 0;                
+            });  
+        }
+    </script>
+</body>
+</html>

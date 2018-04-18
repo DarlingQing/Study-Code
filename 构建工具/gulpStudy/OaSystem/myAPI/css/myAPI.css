@@ -1,0 +1,94 @@
+body{
+    background: #078ace;
+}
+#container{
+    width: 1200px;
+    margin: 0 auto;
+}
+#header{
+    color: #fff;
+    padding-top: 30px;
+}
+#header h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+}
+#header h2 {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+#main {
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+#left {
+    border-right: 0;
+    width: 200px;
+    float: left;
+}
+#left h2{
+    background: #fff;
+    border-right: 0;
+    padding-left: 15px;
+}
+#left .left-lists {
+    margin-top: 15px;
+}
+#left .left-lists li {
+    padding-left: 15px;
+    line-height: 30px;
+}
+#left .left-lists li.list-active a{
+    color: #078ace;
+}
+#left .left-lists li a {
+    text-decoration: none;
+    color: #333;
+}
+#right{
+    border: 0;
+    margin-top: 0;
+    float: left;
+}
+#right>div {
+    color: #000;
+    margin: 10px 0;
+    font-size: 16px;
+    width: 990px;
+    margin-bottom: 15px;
+}
+#right div h3 {
+    margin: 8px 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 30px;
+}
+#right div h4 {
+    line-height: 26px;
+}
+#right div p{
+    line-height: 26px;
+    padding-left: 15px;
+}
+
+.demo {
+    border: 1px solid #ddd;
+    /*line-height: 26px;*/
+    margin: 15px;
+    margin-right: 30px;
+    padding: 15px;
+    border-radius: 3px;
+}
+.demo h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ #right .demo p{
+
+}
+p span{
+    color:#078ace ;
+}

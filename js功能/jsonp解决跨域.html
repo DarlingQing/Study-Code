@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        .a {
+            border: 1px solid #ddd;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <button type="button" id="btn">ClicMe</button>
+    </div>
+</body>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        function handleResponse(response){
+            console.log(response);
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function() {
+                var script = document.createElement("script");
+                script.src = "https://api.douban.com/v2/book/search?q=javascript&count=1&callback=handleResponse"
+                document.body.insertBefore(script,document.body.firstchild)
+            }
+        }
+
+        var mydiv = document.createElement('div');
+        mydiv.className = 'a';
+        mydiv.style.border = '1px solid '
+        document.body.appendChild(mydiv);
+        
+    </script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    //测试浏览器支持不支持Promise
+    'use strict';
+    new Promise(function () {
+
+    })
+    console.log('Support Promise');
+
+    //Promise执行顺序
+    let promise = new Promise(function (resolve,reject) {
+      console.log("Promise begining");
+      resolve();
+    })
+    promise.then(function(){
+        console.log("resolved");
+    })
+    console.log("Hi");
+
+    //不同的promise
+    const p1 = new Promise(function (resolve,reject) {
+        setTimeout(()=>reject(new Error('fail')),3000)
+    })
+    const  p2 = new Promise(function (resolve,reject) {
+        setTimeout(()=>resolve(p1),1000)
+    })
+    p2.then(result => console.log(result))
+        .catch(error => console.log(error))
+
+</script>
+</body>
+</html>

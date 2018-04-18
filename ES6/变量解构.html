@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+//ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，被称为解构
+
+//数组的解构赋值
+let [a,b,c] = [1,2,3];
+console.log(a,b,c);
+
+//数组的嵌套解构
+let[foo,[[bar],baz]] = [1,[[2],3]];
+console.log(foo,bar,baz);
+
+//若解构不成功，则返回undefined
+let [foo1]=[];
+let [bar2,foo2]=[1];
+console.log(foo1,bar2,foo2);
+
+//不完全解构，等号左边的模式只匹配右边模式的一部分，依然可以解构成功
+let [x,y] = [1,2,3];
+console.log(x,y);
+
+//若右边不是数组或其他不可变量的解构，则会报错
+//let [foo3] = 1;
+//console.log(foo3);
+
+//对于Set结构，也可以使用数组的解构赋值
+let [x1,y1,z1] = new Set(['a','b','c']);
+console.log(x1,y1,z1);
+
+//数组中的默认值
+let [x2=true]=[];
+console.log(x2);
+
+//非严格模式下，解构值设为undefined没有影响，设为null会赋值为null
+let [x3=1,y3=1]=[undefined,null];
+console.log(x3,y3);
+
+
+//对象的解构赋值
+let {foo4,bar4} = { foo4:'aaa',bar4 :'bbb'};
+console.log(foo4,bar4);
+
+//对象解构 VS数组解构
+//数组元素是按次序排列的，变量的取值是由位置绝对，而对象属性是以属性名称绝对，曲对应的值
+var {foo5:baz5}={foo5:'aaa',bar5:'bbb'};
+console.log(baz5);
+//实质：对象的解构赋值的内部机制，是先找到同名属性，然后载赋值给对应的变量，真正被赋值的是后者，而不是前者
+//let {foo：foo,bar:baz}={foo:'aaa',bar:'bbb'}
+//其中，foo是匹配模式，baz才是变量，真正被赋值的是变量baz,而不是匹配模式
+
+//对象也可用于嵌套结构的对象
+let obj ={
+	p:[
+		'hello',{y4:'World'}
+	]
+};
+let { p:[x4,{y4}]} =obj;
+console.log(x4,y4);
+
+//对象的结构也可以指定默认值
+var {x5=5}={}
+console.log(x5);
+
+var {x6=3,y6=4}={x6:undefined,y6:null};
+console.log(x6,y6);
+
+//若解构不成功则返回undefined
+let {foo6} = {bar6:'baz'};
+console.log(foo6);
+
+	let {foo:{bar}} = {baz:'baz'};
+	console.log(bar);//报错
+
+</script>
+</body>
+</html>

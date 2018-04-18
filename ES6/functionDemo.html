@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    function sayHello(name) {
+        var name=name||'hello';
+        console.log('name: '+name);
+    }
+    sayHello();
+
+    function sayHello2(name='hello') {  //ES6
+        console.log(`Hello ${name}`);
+    }
+    sayHello2();
+
+    //箭头函数
+    var arr=[1,2,3];
+    arr.forEach(function (v,i,a) {
+        document.write(v);
+    })
+    arr.forEach(v=>document.write(v));
+
+    var events=[1,2,3,4,5];
+    var fives=[];
+    var odds=events.map(v=>v+1);
+
+    var events=[1,2,3,4,5];
+    var fives=[];
+    var odds=events.map(v=>v+1);
+    var nums=events.map((v,i)=>v+i);
+    var pairs=events.map(v=>({even:v,odd:v+1}));
+
+    nums.forEach(v=>{
+        if(v%5===0){
+            fives.push(v);
+        }
+    });
+    console.log(fives);
+    console.log(odds);
+    console.log(pairs)
+</script>;
+</body>
+</html>
