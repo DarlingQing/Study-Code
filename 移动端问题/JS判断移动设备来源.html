@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //js判断是否是电脑端
+    //若返回false说明当前操作系统是手机端，如果返回是true那说明是电脑端
+    function isPC() {
+        var ua = navigator.userAgent;
+        var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+        var flag = true;
+        for(var i = 0; i < Agents.length;i++){
+            if(ua.indexOf(Agents[i])>0){
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    //js判断客户端是否是IOS或者是Android
+    //如果返回true，则说明是Android
+    function is_weixin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //js判断手机操作系统(ios或者Android)
+    $(function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            //这个是安卓操作系统
+        }
+        if (isIOS) {
+            //这个是ios操作系统
+        }
+    });
+</script>
+</body>
+</html>

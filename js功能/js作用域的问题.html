@@ -1,0 +1,106 @@
+<!DOCTYPE 
+    >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <style>  
+           
+    
+    </style>  
+    <body>
+        <input type="text" name="username" id="time" value="111">
+    </body>
+    <script>  
+ 
+    </script>  
+    </head>  
+    
+    <body>  
+        
+        <script>
+            function foo() {
+                console.log(this.a)
+            }
+            var a = 1
+            foo()
+            
+
+            var time = document.getElementById('time');
+            var _this = this;
+            time.onchange = function(){
+                console.log(this.value)
+            }
+            //js以函数划分作用域，obj没有独立作用域
+            //c是obj的属性，不是函数，并非调用才有，
+            //f1是一个函数，谁调用它就指向谁，
+
+            // JS的作用域分为全局作用域和函数作用域，c所在的位置是一个全局作用域下，this指向window
+           var a = 20;
+           var obj = {
+                a:10,
+                c:this.a,   
+                f1: function(){
+                    return this.a;
+                },
+                f2: () => {
+                    return this.a;
+                }
+           }
+           console.log(obj.c);
+           console.log(obj.f1())
+           console.log(obj.f2())
+
+           var name='AAA'
+           var opt = {
+            name: 'Amy',
+            name2: this.name,
+            say1: function() {
+                setTimeout(function(){
+                    console.log(this)
+                    return this.name
+                },3000)
+            },
+            say2: function() {
+                setTimeout(()=>{
+                    console.log(this)
+                    return this.name
+                },3000)
+            },
+            say3: function() {
+                // console.log(this)
+                return this.name
+            },
+            say4: ()=> {
+                // console.log(this)
+                return this.name
+            }
+           }
+
+           console.log(
+            "1="+ opt.name,   //Amy
+            "11="+opt.name2,  //undefined
+            "111="+opt.say1(), // undefined
+            "1111="+opt.say2(), //undefined
+            "11111="+opt.say3(), //undefined
+            "111111="+opt.say4()  //Amy
+            )
+
+            function fun(){
+                var a = b = 5
+                console.log(b)
+            }
+            fun()
+
+            var obj = {
+                smallName: 'Lily',
+                getSmallName: ()=>{
+                    console.log(this, this.smallName)
+                }
+            }
+            var objTemp = obj.getSmallName
+            objTemp()
+            
+        </script>
+</body>
+</html>

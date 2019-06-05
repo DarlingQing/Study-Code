@@ -1,0 +1,75 @@
+<!DOCTYPE 
+    a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>     
+    .container {
+      
+    }
+    .container .bottom {
+      position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 60px;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items:center;
+        width: 100%;
+    }
+    .container .bottom .box1 {
+      flex: 0 0 40px;
+    }
+    .container .bottom .box2 {
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .container .bottom .box3 {
+      flex: 0 0 40px;
+    }
+    </style>  
+    <body>
+
+    </body>
+    <script>  
+ 
+    </script> 
+    </head>  
+    
+    <body>
+        
+      
+      <div class="container">
+        <div class="bottom">
+          <div class="box1">
+            周杰伦
+          </div>
+          <div class="box2">
+            <p>布拉格广场</p>
+            <p>蔡依林/周杰伦</p>
+          </div>
+          <div class="box3"></div>
+        </div>
+      </div>
+      <script>
+        for(var i =0;i < 4;i++){setTimeout(function(){console.log(new Date(), i)}, 1000)}
+
+        const a = 1;
+        const b = {
+            a: 2,
+            test: () => {
+                console.log(this.a)
+            }
+        }
+        b.test()
+
+        const arr = ['a', 'b'];
+        const elements = [0, 1, 2];
+        arr.push.apply(arr, elements);
+        console.log(arr)
+      </script>
+</body>
+</html>

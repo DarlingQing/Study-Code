@@ -12,7 +12,7 @@
 <script src="../js/jquery-1.11.3.js"></script>
 
 <script>
-    var array = [1,2,4,5,4,7];
+    var array = [1,'12', 4,5,4,7, '1','2'];
     Array.prototype.unique = function () {
         var newArray = [];
         for(var i=0;i<this.length;i++){
@@ -22,6 +22,7 @@
         }
         return newArray;
     }
+
 
     Array.prototype.unique2 = function(){
         return Array.from(new Set(array))

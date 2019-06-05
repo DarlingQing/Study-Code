@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main {
+            overflow: hidden;
+        }
+        .left {
+            float: left;
+            width: 20%;
+            background: #0BB20C;
+            margin-bottom: -2000px;
+            padding-bottom: 2000px;
+        }
+        .right {
+            float: left;
+            width: 80%;
+            background: #0A246A;
+            margin-bottom: -2000px;
+            padding-bottom: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <!--思路：给左盒子和右盒子设置一个margin值，同时设定一个相反的负值填充margin值，父级元素设置overflow实现两栏宽度登高-->
+    <div class="main">
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+</body>
+</html>
